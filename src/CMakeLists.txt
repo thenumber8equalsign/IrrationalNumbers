@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 4.1.1)
 
 project(IrrationalNumbers)
 
-include_directories(inludes)    # Include headers
+include_directories(includes)    # Include headers
 
 file(GLOB SOURCES "*.cpp")      # Include app .cpp files in the current directory
 
