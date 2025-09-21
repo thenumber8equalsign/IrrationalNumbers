@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 4.1.1)
 
 project(IrrationalNumbers)
 
-add_executable(IrrationalNumbers src/main.cpp)
+include_directories(inludes)    # Include headers
 
-target_link_libraries(main PRIVATE mpfr gmp)
+file(GLOB SOURCES "*.cpp")      # Include app .cpp files in the current directory
+
+add_executable(program ${SOURCES})
+
+target_link_libraries(program gmp mpfr)
