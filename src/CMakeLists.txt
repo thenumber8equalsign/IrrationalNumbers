@@ -8,4 +8,4 @@ file(GLOB SOURCES "*.cpp" "includes/*.cpp")      # Include app .cpp files in the
 
 add_executable(program ${SOURCES})
 
-target_link_libraries(program gmp mpfr)
+target_link_libraries(program gmp mpfr m)
