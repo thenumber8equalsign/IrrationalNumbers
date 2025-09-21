@@ -23,7 +23,7 @@ namespace IrrationalNumbers {
     // Commonly used functions
     inline BigFloat bigFloatPower(BigFloat base, BigInt exponent); // Inlined because this is called many times during the main for loops
     inline BigInt bigIntPower(BigInt base, BigInt exponent); // Inlined because this is called many times during the main for loops
-    BigFloat bigFloatSqrt(const BigInt NUMBER, const uint64_t DIGITS, BigInt initialGuess = 0);
+    BigFloat bigFloatSqrt(const BigInt NUMBER, const uint64_t DIGITS, BigInt guess = 0);
 
     // Specific functions
     BigFloat pi(const uint64_t DIGITS);
