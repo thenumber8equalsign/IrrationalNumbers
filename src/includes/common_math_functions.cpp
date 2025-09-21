@@ -35,7 +35,7 @@ namespace IrrationalNumbers {
             guess += F_NUMBER / guess;
             guess /= TWO;
 
-            // * 100 / 100 for two decimal points
+            // * 100 / 100 for two decimal places
             std::cout << "\x1b[2K\r" << std::floor(i / (double)DIGITS * 100 * 100) / 100 << "%" << std::flush;
         }
         std::cout << "\x1b[2K\r100%" << std::endl;
