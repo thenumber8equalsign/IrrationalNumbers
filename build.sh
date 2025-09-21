@@ -5,6 +5,6 @@ if command -v cmake &> /dev/null && command -v make &> /dev/null && command -v g
 else
 fi
     echo "You need to install cmake, make and g++ on your system"
-    
-"""cmake -DCMAKE_BUILD_TYPE=Debug ../src
-make"""
+
+#cmake -DCMAKE_BUILD_TYPE=Debug ../src
+#make
