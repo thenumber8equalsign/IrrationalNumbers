@@ -1,10 +1,11 @@
 #!/bin/bash
 
 if command -v cmake &> /dev/null && command -v make &> /dev/null && command -v g++ &> /dev/null; then
-    echo "cmake, make, and g++ are installed"
+    echo "CMake, Make, and g++ are installed, running CMake"
+    mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release ../src
+    make
 else
-    echo "You need to install cmake, make and g++ on your system"
+    echo "You need to install CMake, Make and g++ on your system"
 fi
-
-#cmake -DCMAKE_BUILD_TYPE=Debug ../src
-#make
