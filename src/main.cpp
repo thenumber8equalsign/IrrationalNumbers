@@ -1,12 +1,14 @@
 #include "includes/main_header.hpp"
+#include <cstdio>
 #include <exception>
 #include <ios>
 #include <iostream>
 #include <iomanip>
 #include <limits>
-#include <string>
 #include <vector>
 #include <algorithm>
+#include <string>
+#include <sstream>
 
 
 int main() {
@@ -15,7 +17,12 @@ int main() {
 
     uint64_t digits;
     int chosenConstant;
+    size_t resultStrDecimalPos;
+    size_t numIterations; // Name will be explained on line 101
 
+    std::string resultStr;
+    std::string resultStrFromDecimalAfter;
+    std::stringstream resultStringstream;
     // Declared later due to us needing to set default precision
     //IrrationalNumbers::BigFloat result = 0;
     //IrrationalNumbers::BigFloat tenToDigits;
@@ -46,7 +53,7 @@ int main() {
             } else {
                 std::cout << "Not a valid option" << std::endl;
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
-            }
+            }resultStr.pop_back();
         } else {
             std::cout << "Invalid input. Input must be an integer." << std::endl;
             std::cin.clear(); // Clear error flag on cin
@@ -58,6 +65,7 @@ int main() {
     IrrationalNumbers::BigFloat::default_precision(4ULL * digits + 400ULL); // 4 being ceil(log(10, 2)), thus meaning ~4 bits per decimal digit, add 400 for extra safety
 
     IrrationalNumbers::BigFloat result = 0;
+    IrrationalNumbers::BigFloat tenToDigits = IrrationalNumbers::bigFloatPower(10, digits);
 
 
     // Special cases for sqrt 2 and ln(2) as they take different parameters, and can not use the function map
@@ -81,9 +89,29 @@ int main() {
         std::cerr << "An unexpected error occurred." << std::endl;
     }
 
-    std::cout << std::setprecision(digits) << std::fixed << result << std::endl;
+    // Format the output
+    // Due to std::setprecision doing half-even rounding, and us wanting floor rounding, we need to handle that
+    // We can not multiply by 10^digits, floor it, then divide by 10^digits due to the possibility that 10^digits may be too large to store
+    resultStringstream << std::setprecision(4ULL * digits + 399ULL) << result; // 399 just in case
+    resultStr = resultStringstream.str();
 
+    resultStrDecimalPos = resultStr.find('.');
+    resultStrFromDecimalAfter = resultStr.substr(resultStrDecimalPos);
 
+    // Variable: numIterations, the number of iterations for the following for loop that trims the output string
+    numIterations = resultStrFromDecimalAfter.length() - (digits + 1); // + 1 for the '.' character included
+
+    std::cout << "Trimming output" << std::endl;
+
+    for (size_t i = 0; i < numIterations; ++i) {
+        resultStr.pop_back();
+
+        // * 100 / 100 for 2 decimal places
+        std::cout << "\x1b[2K\r" << std::floor(i / (double)numIterations * 100 * 100) / 100 << std::flush;
+    }
+    std::cout << "\x1b[2K\r100%" << std::endl;
+
+    std::cout << resultStr << std::endl;
 
     return 0;
 }
