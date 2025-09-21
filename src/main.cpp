@@ -16,7 +16,9 @@ int main() {
     uint64_t digits;
     int8_t chosenConstant;
 
-    IrrationalNumbers::BigFloat result;
+    // Declared later due to us needing to set default precision
+    //IrrationalNumbers::BigFloat result = 0;
+    //IrrationalNumbers::BigFloat tenToDigits;
 
     // Safely get input
     for (;;) {
@@ -52,6 +54,9 @@ int main() {
     // Set the precision for the BigFloat type
     IrrationalNumbers::BigFloat::default_precision(4ULL * digits + 400ULL); // 4 being ceil(log(10, 2)), thus meaning ~4 bits per decimal digit, add 400 for extra safety
 
+    IrrationalNumbers::BigFloat result = 0;
+
+
     // Special cases for sqrt 2 and ln(2) as they take different parameters, and can not use the function map
     try {
         if (chosenConstant == 3) {
@@ -72,6 +77,8 @@ int main() {
     } catch (...) {
         std::cerr << "An unexpected error occurred." << std::endl;
     }
+
+    std::cout << std::setprecision(digits) << std::fixed << result << std::endl;
 
 
 
