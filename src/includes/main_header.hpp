@@ -30,7 +30,7 @@ namespace IrrationalNumbers {
     // Specific functions
     BigFloat pi(const uint64_t DIGITS);
     BigFloat euler(const uint64_t DIGITS);
-    BigFloat ln2(const uint64_t DIGITS, const bool COMPUTE_TERMS);
+    BigFloat ln2(const uint64_t DIGITS, const bool COMPUTE_TERMS = false);
 
     // Extra functions (not used by the program, but may be in the future)
     BigFloat bigFloatLn(const uint64_t X, const uint64_t DIGITS);
