@@ -3,5 +3,7 @@
 #include <iostream>
 
 namespace IrrationalNumbers {
-
+    BigFloat pi(const uint64_t DIGITS) {
+        throw NotImplemented();
+    }
 }
