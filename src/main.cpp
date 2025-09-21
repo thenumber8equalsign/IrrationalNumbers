@@ -25,6 +25,7 @@ int main() {
         std::cout << "Number of digits >> " << std::flush;
         // If the input was a valid integer
         if (std::cin >> digits) {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
             break;
         } else {
             // Input failed
@@ -39,10 +40,12 @@ int main() {
         // If the input was a valid integer
         if (std::cin >> chosenConstant) {
             // If validChoices contains chosenConstant
-            if (std::find(VALID_CHOICES.begin(), VALID_CHOICES.end(), chosenConstant) == VALID_CHOICES.end()) {
+            if (std::find(VALID_CHOICES.begin(), VALID_CHOICES.end(), chosenConstant) != VALID_CHOICES.end()) {
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
                 break;
             } else {
                 std::cout << "Not a valid option" << std::endl;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
             }
         } else {
             std::cout << "Invalid input. Input must be an integer." << std::endl;
