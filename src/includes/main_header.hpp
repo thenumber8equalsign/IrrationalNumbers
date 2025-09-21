@@ -36,7 +36,7 @@ namespace IrrationalNumbers {
     BigFloat bigFloatLn(const uint64_t X, const uint64_t DIGITS);
 
     // User Input Function map
-    const std::map<int8_t, std::function<BigFloat(const uint64_t)>> commandMap = {
+    const std::map<int, std::function<BigFloat(const uint64_t)>> commandMap = {
         {1, pi},
         {2, euler}
     };
