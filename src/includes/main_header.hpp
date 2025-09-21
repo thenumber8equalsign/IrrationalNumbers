@@ -33,6 +33,4 @@ namespace IrrationalNumbers {
     // Extra functions (not used by the program, but may be in the future)
     BigFloat bigFloatLn(const uint64_t X, const uint64_t DIGITS);
 }
-
-
 #endif
