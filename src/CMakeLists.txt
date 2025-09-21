@@ -4,7 +4,7 @@ project(IrrationalNumbers)
 
 include_directories(includes)    # Include headers
 
-file(GLOB SOURCES "*.cpp")      # Include app .cpp files in the current directory
+file(GLOB SOURCES "*.cpp" "includes/*.cpp")      # Include app .cpp files in the current directory
 
 add_executable(program ${SOURCES})
 
