@@ -11,10 +11,10 @@
 
 int main() {
     // Variables
-    const std::vector<int8_t> VALID_CHOICES = { 1, 2, 3, 4 };
+    const std::vector<int> VALID_CHOICES = { 1, 2, 3, 4 };
 
     uint64_t digits;
-    int8_t chosenConstant;
+    int chosenConstant;
 
     // Declared later due to us needing to set default precision
     //IrrationalNumbers::BigFloat result = 0;
