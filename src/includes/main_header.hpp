@@ -2,6 +2,8 @@
 #define MAIN_HEADER_HPP
 
 #include <cstdint>
+#include <map>
+#include <functional>
 
 #include <boost/multiprecision/mpfr.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
@@ -33,7 +35,11 @@ namespace IrrationalNumbers {
     // Extra functions (not used by the program, but may be in the future)
     BigFloat bigFloatLn(const uint64_t X, const uint64_t DIGITS);
 
-
+    // User Input Function map
+    const std::map<int8_t, std::function<BigFloat(const uint64_t)>> commandMap = {
+        {1, pi},
+        {2, euler}
+    };
 
     // Inline function definitions
     /**
