@@ -27,7 +27,6 @@ namespace IrrationalNumbers {
         // Variables
         const BigFloat TWO = BigFloat(2);
         const BigFloat F_NUMBER = BigFloat(NUMBER);
-        const BigFloat TEN_TO_DIGITS = bigFloatPower(10, DIGITS);
 
         BigFloat guess = BigFloat(initialGuess);
 
@@ -40,8 +39,6 @@ namespace IrrationalNumbers {
             std::cout << "\x1b[2K\r" << std::floor(i / (double)DIGITS * 100 * 100) / 100 << "%" << std::flush;
         }
         std::cout << "\x1b[2K\r100%" << std::endl;
-        guess *= TEN_TO_DIGITS;
-        guess = boost::multiprecision::floor(guess);
         return guess;
     }
 }
