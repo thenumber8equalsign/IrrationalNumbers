@@ -6,8 +6,16 @@
 #include <boost/multiprecision/mpfr.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
 
+#include <stdexcept>
+
 
 namespace IrrationalNumbers {
+    // NotImplemented exception type (will be removed at a future date)
+    class NotImplemented : public std::logic_error {
+        public:
+        NotImplemented() : std::logic_error("Function not yet implemented") { };
+    };
+
     // Type aliases
     using BigFloat = boost::multiprecision::mpfr_float;
     using BigInt = boost::multiprecision::cpp_int;
