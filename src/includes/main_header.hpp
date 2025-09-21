@@ -13,8 +13,8 @@ namespace IrrationalNumbers {
     using BigInt = boost::multiprecision::cpp_int;
 
     // Commonly used functions
-    BigFloat bigFloatPower(BigFloat base, BigInt exponent);
-    BigInt bigIntPower(BigInt base, BigInt exponent);
+    inline BigFloat bigFloatPower(BigFloat base, BigInt exponent); // Inlined because this is called many times during the main for loops
+    inline BigInt bigIntPower(BigInt base, BigInt exponent); // Inlined because this is called many times during the main for loops
     BigFloat bigFloatSqrt(const BigFloat NUMBER, const uint64_t DIGITS, BigInt initialGuess = 0);
 
     // Specific functions
