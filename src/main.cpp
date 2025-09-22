@@ -5,6 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <stdexcept>
 #include <vector>
 #include <algorithm>
 #include <string>
@@ -83,10 +84,13 @@ int main() {
         }
     } catch (const IrrationalNumbers::NotImplemented& ni) {
         std::cerr << "An error occurred: Function not implemented" << std::endl;
+        return 1;
     } catch (const std::exception& e) {
         std::cerr << "An error occurred: " << e.what() << std::endl;
+        return 1;
     } catch (...) {
         std::cerr << "An unexpected error occurred." << std::endl;
+        return 1;
     }
 
     // Format the output
