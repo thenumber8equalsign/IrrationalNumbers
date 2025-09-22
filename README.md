@@ -41,7 +41,7 @@ brew install gcc
 ```
 
 ## Compilation
-Using automated scripts:
+### Using automated scripts:
 1. Make the scripts executable
   ```bash
   chmod +x ./build.sh
@@ -55,7 +55,7 @@ Using automated scripts:
   ./build_and_run.sh
   ```
   When either one is ran, a folder titled `build` will apepar, and in `build/bin` will be the executable <br />
-Manual:
+### Manual:
 1. Compile
 ```bash
   mkdir build
