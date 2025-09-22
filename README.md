@@ -3,19 +3,19 @@ C++ program and headers to compute some irrational constants (basically just ope
 
 # Compilation
 ## Dependencies
-If you are on Windows, I was too lazy to make a guide, so you have to figure out how to install the dependencies and whatnot.
+If you are on Windows, I was too lazy to make a guide, so you have to figure out how to install the dependencies and whatnot.<br />
 MacOS users, I do not have a Mac, so I never got to test homebrew
 Ensure that CMake, g++, and boost libraries are installed, check you distribution's package manager, or their repos/websites
-[CMake Website](https://cmake.org/)
-[CMake GitLab](https://gitlab.kitware.com/cmake/cmake)
-[Gnu Compiler Collection (g++)](https://gcc.gnu.org/)
-[Gnu Compiler Collection (g++) repository](https://gcc.gnu.org/git/gcc.git)
-[Homebrew MacOS](https://brew.sh/)
-[Homebrew MacOS repository](https://github.com/Homebrew/brew)
-[Boost Website](https://www.boost.org/)
-[Boost GitHub](https://github.com/boostorg/boost)
+[CMake Website](https://cmake.org/) <br />
+[CMake GitLab](https://gitlab.kitware.com/cmake/cmake) <br />
+[Gnu Compiler Collection (g++)](https://gcc.gnu.org/) <br />
+[Gnu Compiler Collection (g++) repository](https://gcc.gnu.org/git/gcc.git) <br />
+[Homebrew MacOS](https://brew.sh/) <br />
+[Homebrew MacOS repository](https://github.com/Homebrew/brew) <br />
+[Boost Website](https://www.boost.org/) <br />
+[Boost GitHub](https://github.com/boostorg/boost) <br />
 
-Some distribution specific installation methods:
+Some distribution specific installation methods: <br />
 Arch and Arch based:
 ```bash
 sudo pacman -S cmake gcc boost boost-libs
@@ -56,10 +56,18 @@ Using automated scripts:
   ```
   When either one is ran, a folder titled `build` will apepar, and in `build/bin` will be the executable
 Manual:
-  ```bash
+1. Compile
+```bash
   mkdir build
   cd build
+  cmake -DCMAKE_BUILD_TYPE=Release ../src
+  make
 ```
+2. Execute
+```bash
+./bin/IrrationalNumbers
+```
+
 # Running pre-compiled executable
 You need the boost runtime libraries to run this program:
 Arch and Arch based:
