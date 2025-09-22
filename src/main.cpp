@@ -88,7 +88,7 @@ int main() {
         std::cerr << "An error occurred: " << e.what() << std::endl;
         return 1;
     } catch (...) {
-        std::cerr << "An unexpected error occurred." << std::endl;
+        std::cerr << "An unknown error occurred." << std::endl;
         return 1;
     }
 
