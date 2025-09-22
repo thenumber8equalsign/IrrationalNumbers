@@ -53,7 +53,7 @@ int main() {
             } else {
                 std::cout << "Not a valid option" << std::endl;
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
-            }resultStr.pop_back();
+            }
         } else {
             std::cout << "Invalid input. Input must be an integer." << std::endl;
             std::cin.clear(); // Clear error flag on cin
