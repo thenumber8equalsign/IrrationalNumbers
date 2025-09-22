@@ -93,10 +93,10 @@ brew install boost
 ```
 
 # Credits
-This project was inspired by y-cruncher, a "Multi-Threaded Pi-Program"
+This project was inspired by y-cruncher, a "Multi-Threaded Pi-Program" <br />
 [y-cruncher](https://www.numberworld.org/y-cruncher/)
 
-The formulas used are from Wikipedia, "The Free Encyclopedia"
+The formulas used are from Wikipedia, "The Free Encyclopedia" <br />
 [Pi - Wikipedia, Modern quest for more digits -> Rapidly convergent series](https://en.wikipedia.org/wiki/Pi#Rapidly_convergent_series) <br />
 [e (mathematical constant) - Wikipedia, Definitions](https://en.wikipedia.org/wiki/E_(mathematical_constant)#Definitions) <br />
 [Newton's method - Wikipedia, Examples -> Use of Newton's method to compute square roots](https://en.wikipedia.org/wiki/Newton%27s_method#Use_of_Newton's_method_to_compute_square_roots) <br />
