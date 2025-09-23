@@ -1,5 +1,4 @@
 #include "main_header.hpp"
-#include <iomanip>
 #include <iostream>
 
 namespace IrrationalNumbers {
