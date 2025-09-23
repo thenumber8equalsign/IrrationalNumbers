@@ -5,7 +5,7 @@ C++ program and headers to compute some irrational constants (basically just ope
 ## Dependencies
 If you are on Windows, I was too lazy to make a guide, so you have to figure out how to install the dependencies and whatnot.<br />
 MacOS users, I do not have a Mac, so I never got to test homebrew
-Ensure that CMake, g++, and boost libraries are installed, check you distribution's package manager, or their repos/websites
+Ensure that CMake, g++, and boost libraries are installed, check you distribution's package manager, or their repos/websites <br />
 [CMake Website](https://cmake.org/) <br />
 [CMake GitLab](https://gitlab.kitware.com/cmake/cmake) <br />
 [Gnu Compiler Collection (g++)](https://gcc.gnu.org/) <br />
