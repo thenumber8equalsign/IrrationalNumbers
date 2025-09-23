@@ -95,7 +95,7 @@ int main() {
     // Format the output
     // Due to std::setprecision doing half-even rounding, and us wanting floor rounding, we need to handle that
     // We can not multiply by 10^digits, floor it, then divide by 10^digits due to the possibility that 10^digits may be too large to store
-    resultStringstream << std::setprecision(4ULL * digits + 399ULL) << result; // 399 just in case
+    resultStringstream << std::setprecision(4ULL * digits + 399ULL) << std::fixed << result; // 399 just in case
     resultStr = resultStringstream.str();
 
     resultStrDecimalPos = resultStr.find('.');
