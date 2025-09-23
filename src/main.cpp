@@ -25,7 +25,6 @@ int main() {
     std::stringstream resultStringstream;
     // Declared later due to us needing to set default precision
     //IrrationalNumbers::BigFloat result = 0;
-    //IrrationalNumbers::BigFloat tenToDigits;
 
     // Safely get input
     for (;;) {
@@ -65,7 +64,6 @@ int main() {
     IrrationalNumbers::BigFloat::default_precision(4ULL * digits + 400ULL); // 4 being ceil(log(10, 2)), thus meaning ~4 bits per decimal digit, add 400 for extra safety
 
     IrrationalNumbers::BigFloat result = 0;
-    IrrationalNumbers::BigFloat tenToDigits = IrrationalNumbers::bigFloatPower(10, digits);
 
 
     // Special cases for sqrt 2 and ln(2) as they take different parameters, and can not use the function map
