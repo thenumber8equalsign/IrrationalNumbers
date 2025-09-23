@@ -13,7 +13,7 @@ namespace IrrationalNumbers {
             factorial = factorial * k;
             result = result + ONE / BigFloat(factorial);
 
-            std::cout << "\x1b[2K\r" << floor((double)k / (double)TERMS * 100 * 100) / 100 << std::flush;
+            std::cout << "\x1b[2K\r" << floor((double)k / (double)TERMS * 100 * 100) / 100 << "%" << std::flush;
         }
         std::cout << "\x1b[2K\r100.00%" << std::endl;
         return result;
