@@ -28,20 +28,6 @@ int main() {
 
     // Safely get input
     for (;;) {
-        std::cout << "Number of digits >> " << std::flush;
-        // If the input was a valid integer
-        if (std::cin >> digits) {
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
-            break;
-        } else {
-            // Input failed
-            std::cout << "Invalid input. Input must be an integer." << std::endl;
-            std::cin.clear(); // Clear error flag on cin
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
-        }
-    }
-
-    for (;;) {
         std::cout << "Which constant would you like to compute?\n1) π (Pi)\n2) e (Euler's number)\n3) √2 (Square root of 2)\n4) ln(2) (Natural logarithm of 2)" << std::endl;
         // If the input was a valid integer
         if (std::cin >> chosenConstant) {
@@ -54,6 +40,20 @@ int main() {
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
             }
         } else {
+            std::cout << "Invalid input. Input must be an integer." << std::endl;
+            std::cin.clear(); // Clear error flag on cin
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
+        }
+    }
+
+    for (;;) {
+        std::cout << "Number of digits >> " << std::flush;
+        // If the input was a valid integer
+        if (std::cin >> digits) {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
+            break;
+        } else {
+            // Input failed
             std::cout << "Invalid input. Input must be an integer." << std::endl;
             std::cin.clear(); // Clear error flag on cin
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid characters
