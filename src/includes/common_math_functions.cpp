@@ -38,7 +38,7 @@ namespace IrrationalNumbers {
             // * 100 / 100 for two decimal places
             std::cout << "\x1b[2K\r" << std::floor(i / (double)DIGITS * 100 * 100) / 100 << "%" << std::flush;
         }
-        std::cout << "\x1b[2K\r100%" << std::endl;
+        std::cout << "\x1b[2K\r100.00%" << std::endl;
         return guess;
     }
 }
