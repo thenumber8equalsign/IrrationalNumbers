@@ -101,6 +101,7 @@ int main() {
     resultStrDecimalPos = resultStr.find('.');
     resultStrFromDecimalAfter = resultStr.substr(resultStrDecimalPos);
 
+
     // Variable: numIterations, the number of iterations for the following for loop that trims the output string
     numIterations = resultStrFromDecimalAfter.length() - (digits + 1); // + 1 for the '.' character included
 
@@ -112,7 +113,7 @@ int main() {
         // * 100 / 100 for 2 decimal places
         std::cout << "\x1b[2K\r" << std::floor(i / (double)numIterations * 100 * 100) / 100 << std::flush;
     }
-    std::cout << "\x1b[2K\r100%" << std::endl;
+    std::cout << "\x1b[2K\r100.00%" << std::endl;
 
     std::cout << resultStr << std::endl;
 
