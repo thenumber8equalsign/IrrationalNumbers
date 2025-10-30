@@ -4,7 +4,7 @@ project(IrrationalNumbers)
 
 include_directories(includes)    # Include headers
 
-file(GLOB SOURCES "*.cpp" "includes/*.cpp")      # Include app .cpp files in the current directory
+file(GLOB SOURCES "*.cpp" "includes/*.cpp")      # Include all .cpp files in the current directory
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/bin")
 add_executable(IrrationalNumbers ${SOURCES})
